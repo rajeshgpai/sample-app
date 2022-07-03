@@ -3,23 +3,23 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: demo-app
-  name: demo-app
+    app: sample-app
+  name: sample-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: demo-app
+      app: sample-app
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: demo-app
+        app: sample-app
     spec:
       containers:
-      - image: rajeshgpai/demo-app:0.0.1-SNAPSHOT
-        name: demo-app
+      - image: rajeshgpai/sample-app:0.0.1-SNAPSHOT
+        name: sample-app
         resources: {}
 status: {}
 ---
@@ -28,8 +28,8 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: demo-app
-  name: demo-app
+    app: sample-app
+  name: sample-app
 spec:
   ports:
   - name: 8080-8080
@@ -37,7 +37,7 @@ spec:
     protocol: TCP
     targetPort: 8080
   selector:
-    app: demo-app
+    app: sample-app
   type: ClusterIP
 status:
   loadBalancer: {}
