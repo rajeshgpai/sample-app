@@ -32,10 +32,14 @@ metadata:
   name: sample-app
 spec:
   ports:
-  - name: 8080-8080
-    port: 8080
-    protocol: TCP
-    targetPort: 8080
+    - name: high
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+    - name: low
+      port: 80
+      protocol: TCP
+      targetPort: 8080
   selector:
     app: sample-app
   type: ClusterIP
